@@ -46,7 +46,7 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #f08080;
 }
 
 .dropdown-content {
@@ -75,3 +75,53 @@ body {
   display: block;
 }
 
+
+
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color:rgb(40, 40, 40);
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* כדי למנוע יציאת אלמנטים מהגבולות */
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.form-container form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="password"],
+.form-container form input[type="tel"]{
+  width: calc(100% - 24px); /* להקטין את רוחב ה-inputs על מנת שיתאימו ל-padding */
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.form-container form input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #f08080;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-container form input[type="submit"]:hover {
+  background-color: #e75454;
+}
