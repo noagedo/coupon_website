@@ -1,8 +1,9 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
   return (
+    <div> <br /> <br />
     <div className="form-container">
       <h2>Login</h2>
       <form>
@@ -20,6 +21,8 @@ function LoginForm() {
         />
         <input type="submit" value="Login" />
       </form>
+      <Link to="/signup" className='link'>click here to sign up for free</Link>
+    </div>
     </div>
   );
 }

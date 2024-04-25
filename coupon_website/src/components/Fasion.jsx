@@ -81,3 +81,5 @@ export const Fashion = () => {
   </div>
   );
 };
+
+export default Fashion;

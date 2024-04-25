@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import myImage from '../assets/CouponLogo.png'; // Adjust the path as necessary
+
 
 export const NavBar = () => {
     return (
+        <div>
+            <img src={myImage} alt="Description of the image" className="navbar-image"/>
+
         <div>
             <div className="navbar">
                 <img 
@@ -28,6 +33,7 @@ export const NavBar = () => {
             </div>
 
            
+        </div>
         </div>
     );
 };

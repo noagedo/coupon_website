@@ -80,3 +80,5 @@ export const Food = () => {
     </div>
   );
 };
+
+export default Food;
