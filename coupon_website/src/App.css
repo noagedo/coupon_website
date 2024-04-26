@@ -187,6 +187,7 @@ footer
     gap: 21px;
     row-gap: 21px;
     column-gap: 21px;
+    padding: 15px 0 ;
     
 }
 .footer-socials
