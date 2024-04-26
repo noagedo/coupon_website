@@ -1,21 +1,5 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-<<<<<<< HEAD
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { NavBar } from "./components/NavBar";
-import { Footer } from "./components/Footer";
-function App() {
-  return (
-    <>
-      <NavBar />
-      <Footer />
-    </>
-=======
 
 import "./App.css";
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import NavBar from "./components/NavBar";
@@ -25,6 +9,8 @@ import { WishList } from "./components/WishList";
 import { Fashion } from "./components/Fasion";
 import { Food } from "./components/Food";
 import {Home} from "./components/Home";
+import Footer from "./components/footer";
+
 
 
 function App() {
@@ -40,8 +26,10 @@ function App() {
         <Route path="/Food" element={<Food />} /> 
         <Route path="/Home" element={<Home />} /> 
       </Routes>
+    <Footer/>
+
     </Router>
->>>>>>> d9445de7b20e5737ab804cf78c6494037ffad21c
+ 
   );
 }
 

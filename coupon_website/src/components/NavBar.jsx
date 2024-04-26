@@ -34,14 +34,11 @@ export const NavBar = () => {
 
            
         </div>
-<<<<<<< HEAD
-    </>
-    
-}
-=======
+
+
         </div>
     );
 };
 
 export default NavBar;
->>>>>>> d9445de7b20e5737ab804cf78c6494037ffad21c
+
