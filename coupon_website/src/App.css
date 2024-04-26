@@ -1,3 +1,8 @@
+* {
+  margin: 0 ;
+  padding: 0;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   
@@ -178,6 +183,7 @@ footer
  { background: pink;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 21px;
     row-gap: 21px;
     column-gap: 21px;

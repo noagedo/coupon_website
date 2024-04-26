@@ -8,11 +8,14 @@ import { FaFacebookSquare } from "react-icons/fa";
         <div className="footer-socials"> 
 
           {/* Social media links */}
-          <a href="https://www.instagram.com/"><FaSquareInstagram size={40} color="red" /></a>
-          <a href="https://www.facebook.com/"><FaFacebookSquare size={40} color="red"/></a>
+          <a href="https://www.instagram.com/"><FaSquareInstagram size={40} color="#E1306C" /></a>
+          <a href="https://www.facebook.com/"><FaFacebookSquare size={40} color="blue"/></a>
         </div>
-        <p>&copy;צור קשר</p> {/* Adding a copyright notice */}
-        <p>אודות {/* Adding a note about the development tools used */}</p>
+        <p>contact us</p> {/* Adding a copyright notice */}
+        <p>about {/* Adding a note about the development tools used */}</p>
+        <p>privacy policy</p> {/* Adding a copyright notice */}
+        <p>terms of use {/* Adding a note about the development tools used */}</p>
+        
       </footer>
     </>
   );

@@ -9,7 +9,7 @@ import { WishList } from "./components/WishList";
 import { Fashion } from "./components/Fasion";
 import { Food } from "./components/Food";
 import {Home} from "./components/Home";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 
 
