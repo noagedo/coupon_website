@@ -43,10 +43,24 @@
     right: 0;
     top: 0;
   }
+  }
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
+footer
+ { background: pink;
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+    row-gap: 21px;
+    column-gap: 21px;
+    
 }
-
+.footer-socials
+{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
