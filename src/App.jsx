@@ -9,6 +9,7 @@ import { WishList } from "./components/WishList";
 import { Fashion } from "./components/Fasion";
 import { Food } from "./components/Food";
 import {Home} from "./components/Home";
+import { Beauty } from "./components/Beauty";
 import Footer from "./components/Footer";
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Fashion" element={<Fashion />} /> 
         <Route path="/Food" element={<Food />} /> 
         <Route path="/Home" element={<Home />} /> 
+        <Route path="/Beauty" element={<Beauty />} />
       </Routes>
     <Footer/>
 

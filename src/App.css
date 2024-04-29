@@ -10,10 +10,28 @@ body {
 
 .logo-image{
   
-  width: 50px;
+  width: 100px;
   height: auto;
   float: left;
 }
+
+.homepagePicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh; /* Set the height to 100% of the viewport height */
+  width: 100%; /* Set the width to fill the container */
+  
+}
+
+.homepagePicture img {
+  max-width: 50%; /* Ensure the image does not exceed the container width */
+  max-height: 50%; /* Ensure the image does not exceed the container height */
+  size: 10px;
+}
+
+
+
 
 
 .navbar {
