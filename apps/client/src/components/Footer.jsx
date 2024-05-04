@@ -3,6 +3,7 @@ import { FaFacebookSquare } from "react-icons/fa";
  const Footer = () => {
   return (
     <>
+    <br /><br />
       <footer className="footer"> {/* Assigning the class "footer" to utilize the styles from the CSS file */}
       
         <div className="footer-socials"> 
