@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "dev:client": "turbo run dev --filter cupony-client",
+    "dev:server": "turbo run dev --filter cupony-server",
     "type-check": "turbo run type-check",
     "build": "turbo run build"
   },
@@ -15,4 +16,6 @@
   "devDependencies": {
     "turbo": "^1.12.4"
   }
-}
+  
+  }
+
