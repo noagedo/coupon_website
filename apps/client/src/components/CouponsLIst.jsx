@@ -1,9 +1,6 @@
 export const CouponsList  = ()=> {
 
-    const fieldCoupons = [
-        { id: '', name: '', description: '', discount: 0, category: '', code: '', expired: false, imageSrc: '' },
-        
-    ];
+    
 
     return (
         <div
