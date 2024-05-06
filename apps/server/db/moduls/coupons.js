@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const couponsScheme = new mongoose.Schema({
+const Coupon = new mongoose.Schema({
     id:{
         type:String,
         require:true,
@@ -19,7 +19,7 @@ const couponsScheme = new mongoose.Schema({
  
   category: {
     type: String,
-    enum: ["RFashion", "Beauty", "Home", "Food"],
+    enum: ["Fashion", "Beauty", "Home", "Food"],
     required: true,
   },
   code: {
@@ -29,6 +29,9 @@ const couponsScheme = new mongoose.Schema({
     type: String
   },
 });
-const Coupon = mongoose.model("coupons", couponsScheme);
+const couponModel = mongoose.model("coupons", Coupon);
 
-exports.Coupon = Coupon;
+module.exports = {
+  Coupon,
+  couponModel,
+};

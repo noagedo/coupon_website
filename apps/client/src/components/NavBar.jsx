@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import myImage from "../assets/CouponLogo.png"; // Adjust the path as necessary
+import myImage from "../assets/CouponLogo.png"; 
 import AsyncSelect from "react-select/async";
 
 const coupons = [

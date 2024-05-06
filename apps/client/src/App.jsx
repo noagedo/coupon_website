@@ -20,10 +20,10 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
-        <Route path="/Fashion" element={<Fashion />} />
-        <Route path="/Food" element={<Food />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Beauty" element={<Beauty />} />
+        <Route path="/fashion" element={<Fashion />} />
+        <Route path="/food" element={<Food />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/beauty" element={<Beauty />} />
       </Routes>
       <Footer />
     </Router>
