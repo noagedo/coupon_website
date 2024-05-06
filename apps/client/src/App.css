@@ -10,9 +10,24 @@ body {
 
 .logo-image{
   
-  width: 50px;
+  width: 100px;
   height: auto;
   float: left;
+}
+
+.homepagePicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh; 
+  width: 100%;
+
+}
+
+.homepagePicture img {
+  max-width: 50%; 
+  max-height: 50%; 
+  size: 10px;
 }
 
 
