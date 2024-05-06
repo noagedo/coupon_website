@@ -88,7 +88,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color:#EFA593;
+  background-color:#FAF2E9;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden; /* כדי למנוע יציאת אלמנטים מהגבולות */
@@ -180,7 +180,7 @@ body {
 }
 
 footer
- { background: pink;
+ { background: #FAF2E9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,4 +195,106 @@ footer
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+
+
+.gallery {
+  display: flex; 
+  justify-content: center; 
+}
+
+.row {
+  display: flex; 
+  gap: 100px; 
+}
+
+
+.admin-coupon-list {
+  font-family: Arial, sans-serif;
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popup-inner {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.coupon-list {
+  list-style: none;
+  padding: 0;
+}
+
+
+.coupon-item {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.coupon-item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.coupon-item strong {
+  font-weight: bold;
+  color: #333;
+}
+
+
+.admin-coupon-list button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.popup button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.popup button.primary {
+  background-color: #28a745;
+}
+
+
+.popup button.secondary {
+  background-color: #dc3545;
 }

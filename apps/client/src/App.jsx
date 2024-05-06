@@ -10,6 +10,7 @@ import { Fashion } from "./components/Fasion";
 import { Food } from "./components/Food";
 import {Home} from "./components/Home";
 import Footer from "./components/Footer";
+import AdminCouponList from "./components/AdminCouponList";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Fashion" element={<Fashion />} /> 
         <Route path="/Food" element={<Food />} /> 
         <Route path="/Home" element={<Home />} /> 
+        <Route path="/admin" element={<AdminCouponList/>} />
       </Routes>
     <Footer/>
 
