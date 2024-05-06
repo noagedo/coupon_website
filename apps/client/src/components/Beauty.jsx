@@ -2,10 +2,7 @@ import { CouponsList } from './CouponsLIst';
 
 export const Beauty = ()=>{
     return (
-        <div>
-            {/* Your Food component implementation */}
-            <CouponsList coupons={coupons} />
-        </div>
+            <CouponsList coupons={coupons} /> 
     );
 }
 

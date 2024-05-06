@@ -3,10 +3,8 @@ import { CouponsList } from './CouponsLIst';
 
 export const Food = ({ foodCoupons }) => {
   return (
-    <div>
-        {/* Your Food component implementation */}
         <CouponsList coupons={foodCoupons} />
-    </div>
+
 );
 };
 
