@@ -1,3 +1,4 @@
+
 import myVideo from '../assets/Untitled design.mp4'
 import myVideo2 from '../assets/zara.mp4';
 import myVideo3 from '../assets/new Collection.mp4';
@@ -32,6 +33,7 @@ export const HomePage = () => {
             
         </div>
     );
+
 };
 
 export default HomePage;

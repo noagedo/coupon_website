@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      react-select:
+        specifier: ^5.8.0
+        version: 5.8.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       turbo:
         specifier: ^1.12.4
@@ -26,9 +30,11 @@ importers:
       react-router-dom:
         specifier: ^6.23.0
         version: 6.23.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+
       react-select:
         specifier: ^5.8.0
         version: 5.8.0(@types/react@18.3.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+
     devDependencies:
       '@types/react':
         specifier: ^18.2.66
@@ -1951,7 +1957,9 @@ snapshots:
 
   '@emotion/memoize@0.8.1': {}
 
+
   '@emotion/react@11.11.4(@types/react@18.3.1)(react@18.2.0)':
+
     dependencies:
       '@babel/runtime': 7.24.5
       '@emotion/babel-plugin': 11.11.0
@@ -1962,8 +1970,10 @@ snapshots:
       '@emotion/weak-memoize': 0.3.1
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
+
     optionalDependencies:
       '@types/react': 18.3.1
+
 
   '@emotion/serialize@1.1.4':
     dependencies:
@@ -3130,6 +3140,7 @@ snapshots:
 
   ms@2.1.2: {}
 
+
   ms@2.1.3: {}
 
   nanoid@3.3.7: {}
@@ -3137,6 +3148,7 @@ snapshots:
   natural-compare@1.4.0: {}
 
   negotiator@0.6.3: {}
+
 
   node-releases@2.0.14: {}
 
@@ -3294,11 +3306,13 @@ snapshots:
       '@remix-run/router': 1.16.0
       react: 18.2.0
 
+
   react-select@5.8.0(@types/react@18.3.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.24.5
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.4(@types/react@18.3.1)(react@18.2.0)
+
       '@floating-ui/dom': 1.6.4
       '@types/react-transition-group': 4.4.10
       memoize-one: 6.0.0
@@ -3306,15 +3320,19 @@ snapshots:
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.3.1)(react@18.2.0)
+
     transitivePeerDependencies:
       - '@types/react'
 
   react-transition-group@4.4.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
+
     dependencies:
       '@babel/runtime': 7.24.5
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
+
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
@@ -3624,11 +3642,13 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+
   use-isomorphic-layout-effect@1.1.2(@types/react@18.3.1)(react@18.2.0):
     dependencies:
       react: 18.2.0
     optionalDependencies:
       '@types/react': 18.3.1
+
 
   utils-merge@1.0.1: {}
 
