@@ -1,11 +1,8 @@
-import React from 'react';
-import { CouponsList } from './CouponsLIst';
+import React from "react";
+import { CouponsList } from "./CouponsLIst";
 
-export const Food = ({ foodCoupons }) => {
-  return (
-        <CouponsList coupons={foodCoupons} />
-
-);
+export const FOOD = () => {
+  return <CouponsList coupons={coupons} />;
 };
 
 export default Food;
