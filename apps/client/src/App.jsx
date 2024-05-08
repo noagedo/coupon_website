@@ -11,6 +11,7 @@ import { Home } from "./components/Home";
 import Footer from "./components/Footer";
 import { Beauty } from "./components/Beauty";
 
+
 function App() {
   return (
     <Router>
