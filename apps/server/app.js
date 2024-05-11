@@ -1,17 +1,17 @@
-
+import cors from "cors";
 import express from 'express';
 import mongoose from 'mongoose';
 import routes from './routes/index.js';
 
 
 const app = express()
+app.use(cors());
 app.use(express.json())
-
 routes(app);
 
 const start = async () => {
     try {
-      await mongoose.connect('mongodb+srv://yuval056:yuval963852@cluster0.ky85dz5.mongodb.net/'), {
+      await mongoose.connect('mongodb+srv://yuval056:yuval963852@cluster0.ky85dz5.mongodb.net/coupons?retryWrites=true&w=majority&appName=Cluster0'), {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       };

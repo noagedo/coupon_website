@@ -1,4 +1,4 @@
-import { CouponsList } from './CouponsLIst';
+import { CouponsList } from './CouponsList';
 
 export const Beauty = ()=>{
     return (

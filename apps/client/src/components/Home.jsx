@@ -1,5 +1,5 @@
 import React from 'react';
-import { CouponsList } from './CouponsLIst';
+import { CouponsList } from './CouponsList';
 
 export const Home = () => {
   return (

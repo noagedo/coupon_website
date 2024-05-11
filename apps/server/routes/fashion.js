@@ -1,11 +1,14 @@
 import express from "express";
-
+import {couponModel} from "../db/moduls/coupons.js"
 const router = express.Router();
 
 
-router.get("/fashion",async(req,res)=>{
-    res.send("fashion")
+
+
+router.get("/getCoupon",async(req,res)=>{
+    const coupon = await couponModel.find({});
+    res.send(coupon);
 
 })
 
-export default router;
+export {router as couponRouter};
