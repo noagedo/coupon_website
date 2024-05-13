@@ -35,10 +35,16 @@ const coupons = [
 ];
 
 export const NavBar = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  console.log("User:", user);
+
   const filterCoupons = (inputValue) => {
     return coupons.filter((i) =>
       i.label.toLowerCase().includes(inputValue.toLowerCase())
+    
     );
+    
+
   };
 
   const handleOption = (inputValue, cb) => {
@@ -84,7 +90,9 @@ export const NavBar = () => {
               <Link to="/Home">Home</Link>
               <Link to="/Food">Food</Link>
             </div>
+            
           </div>
+          <div className="user-info">{user && `Welcome, ${user.firstname}`}</div>
         </div>
 
         <AsyncSelect cacheOptions loadOptions={handleOption} defaultOptions />

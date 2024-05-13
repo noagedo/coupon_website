@@ -7,9 +7,13 @@ export const Fashion = () => {
 
   useEffect(() => {
     const getCoupons = async () => {
-      const { data } = await axios.get("http://localhost:5000/coupon/getCoupon");
+      const { data } = await axios.get(
+        "http://localhost:5000/coupon/getCoupon"
+      );
       // Filter coupons based on category
-      const fashionCoupons = data.filter(coupon => coupon.category === 'fashion');
+      const fashionCoupons = data.filter(
+        (coupon) => coupon.category === "fashion"
+      );
       setCoupons(fashionCoupons);
     };
     getCoupons();
@@ -17,6 +21,5 @@ export const Fashion = () => {
 
   return <CouponsList coupons={coupons} />;
 };
-
 
 export default Fashion;
