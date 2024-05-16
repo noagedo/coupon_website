@@ -14,6 +14,7 @@ import AdminCouponList from "./components/AdminCouponList";
 
 import { Beauty } from "./components/Beauty";
 
+
 function App() {
   return (
     <Router>

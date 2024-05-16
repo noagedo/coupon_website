@@ -1,49 +1,89 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 
-function SignupForm() {
+const SignupForm = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    phonenumber: "",
+    admin: false, // Assuming admin defaults to false
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/api/createUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      console.log("User created:", data);
+      alert("New user created successfully!");
+    } catch (error) {
+      console.log("Error");
+      alert("Error creating user. Please try again.");
+    }
+  };
+
   return (
-    <div><br /><br />
     <div className="form-container">
-      <h2>Sign Up</h2>
-      <form>
-      <label htmlFor="first_name">First Name:</label>
-        <input 
-          type="text" 
-          id="first_name" 
-          name="first_name" 
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          value={formData.firstname}
+          onChange={handleChange}
+          required
         />
-          <label htmlFor="last_name">Last Name:</label>
-        <input 
-          type="text" 
-          id="last_name" 
-          name="last_name" 
+        <input
+          type="text"
+          name="lastname"
+          placeholder="Last Name"
+          value={formData.lastname}
+          onChange={handleChange}
+          required
         />
-        <label htmlFor="phone_number">Phone Number:</label>
-        <input 
-           type="tel"
-          id="phone_number" 
-          name="phone_number" 
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
         />
-        <label htmlFor="email">Email:</label>
-        <input 
-          type="text" 
-          id="email" 
-          name="email" 
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
         />
-        <label htmlFor="password">Password:</label>
-        <input 
-          type="password" 
-          id="password" 
-          name="password"  
+        <input
+          type="tel"
+          name="phonenumber"
+          placeholder="Phone Number"
+          value={formData.phonenumber}
+          onChange={handleChange}
         />
-        <input type="submit" value="sign up" />
+        <button type="submit">Register</button>
       </form>
-      <Link to="/login" className='link'>sign up already? Click here to login</Link>
-    </div>
     </div>
   );
-
-}
+};
 
 export default SignupForm;
