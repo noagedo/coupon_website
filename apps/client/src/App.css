@@ -103,7 +103,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color:#EFA593;
+  background-color:#FAF2E9;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden; /* כדי למנוע יציאת אלמנטים מהגבולות */
@@ -195,7 +195,7 @@ body {
 }
 
 footer
- { background: pink;
+ { background: #FAF2E9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,4 +210,115 @@ footer
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+
+
+.gallery {
+  display: flex; 
+  justify-content: center; 
+}
+
+.row {
+  display: flex; 
+  gap: 100px; 
+}
+
+
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333333;
+}
+
+.popup label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.popup label > * {
+  margin-left: 10px;
+}
+
+.popup button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.popup button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.popup button[type="submit"]:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #ff0000;
+  margin-top: 5px;
+}
+
+.coupon-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.coupon-item {
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.coupon-item img {
+  margin-top: 10px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.admin-coupon-list button {
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  background-color: #8cb964;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-coupon-list button:hover {
+  background-color: #218838;
+}
+
+.admin-coupon-list button + button {
+  margin-left: 10px;
 }
