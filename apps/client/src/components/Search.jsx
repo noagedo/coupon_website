@@ -38,8 +38,9 @@ export const Search = ( )=>{
     
     <div>
           <input
+          className="searchInput"
             type="text"
-            placeholder="Search for fashion coupons..."
+            placeholder="Search for coupons..."
             value={searchQuery}
             onChange={handleSearchInputChange}
           />

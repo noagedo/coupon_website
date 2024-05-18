@@ -32,7 +32,7 @@ const handleSubmit = async (e) => {
     // Save user details in localStorage
     localStorage.setItem('user', JSON.stringify(user));
     // Redirect to dashboard or any other page
-    window.location.href = '/dashboard';
+    window.location.href = '/';
   } catch (error) {
     console.log('Error:', error);
     alert('Invalid email or password. Please try again.');
@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Login</button>
+          <button className='loginBtn' type="submit">Login</button>
         </form>
         <Link to="/signup" className="link">
           Click here to sign up for free

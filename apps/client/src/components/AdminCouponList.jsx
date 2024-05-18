@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
-import CouponFormPopup from './CouponFormPopup';
+import React, { useState, useEffect } from "react";
+import CouponFormPopup from "./CouponFormPopup";
+import CouponEdit from "./CouponEdit";
+import axios from "axios";
 
 function AdminCouponList() {
-  const [coupons, setCoupons] = useState([
-    { id: 1, name: "קופון 1", description: "תיאור קופון 1", expirationDate: "01/01/2025", category: "fashion", image: null },
-    { id: 2, name: "קופון 2", description: "תיאור קופון 2", expirationDate: "05/31/2024", category: "home", image: null },
-    { id: 3, name: "קופון 3", description: "תיאור קופון 3", expirationDate: "12/15/2024", category: "food", image: null }
-  ]);
+  const [coupons, setCoupons] = useState([]);
 
-  const deleteCoupon = (id) => {
-    const updatedCoupons = coupons.filter(coupon => coupon.id !== id);
-    setCoupons(updatedCoupons);
+  useEffect(() => {
+    const fetchCoupons = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/coupon/getCoupon"
+        );
+        setCoupons(response.data);
+      } catch (error) {
+        console.error("Error fetching coupons:", error);
+      }
+    };
+    fetchCoupons();
+  }, []);
+
+  const deleteCoupon = async (name) => {
+    try {
+      await axios.delete("http://localhost:5000/api/deleteCoupon", {
+        data: { name },
+      }); // Send the name of the coupon to be deleted in the request body
+      setCoupons((prevCoupons) =>
+        prevCoupons.filter((coupon) => coupon.name !== name)
+      );
+    } catch (error) {
+      console.error("Error deleting coupon:", error);
+    }
   };
 
   const [showEditPopup, setShowEditPopup] = useState(false);
@@ -27,52 +47,80 @@ function AdminCouponList() {
     setShowAddPopup(true);
   };
 
-  const onSubmit = (values, { setSubmitting }) => {
-    if (selectedCoupon) {
-      const updatedCoupons = coupons.map(coupon =>
-        coupon.id === selectedCoupon.id ? { ...selectedCoupon, ...values } : coupon
-      );
-      setCoupons(updatedCoupons);
-      setShowEditPopup(false);
-    } else {
-      const newCouponId = coupons.length + 1;
-      const formattedCoupon = { ...values, id: newCouponId };
-      formattedCoupon.image = values.image; 
-      setCoupons([...coupons, formattedCoupon]);
-      setShowAddPopup(false);
+  const onSubmit = async (values) => {
+    try {
+      if (selectedCoupon) {
+        // Update existing coupon
+        const response = await axios.put("http://localhost:5000/api/updateCoupon", values);
+        const updatedCoupon = response.data;
+        const updatedCoupons = coupons.map((coupon) =>
+          coupon.id === updatedCoupon.id ? updatedCoupon : coupon
+        );
+        setCoupons(updatedCoupons);
+        setShowEditPopup(false);
+      } else {
+        // Add new coupon
+        const response = await axios.post("http://localhost:5000/api/addCoupon", values);
+        const newCoupon = response.data;
+        setCoupons([...coupons, newCoupon]);
+        setShowAddPopup(false);
+      }
+      
+    } catch (error) {
+      console.error("Error submitting coupon:", error);
+    } finally {
+      // אין צורך לקבוע את setSubmitting בכל המקרים כאן, כיוון שזה אינו נמצא באובייקט הארגומנטים
     }
-    setSubmitting(false);
-  };
+};
+
 
   return (
     <div className="admin-coupon-list">
       <h2>Coupon List</h2>
-      <button onClick={openAddPopup}>Add New Coupon</button><br /><br />
+      <button onClick={openAddPopup}>Add New Coupon</button>
+      <br />
+      <br />
       <ul className="coupon-list">
         {coupons.map((coupon) => (
           <li key={coupon.id} className="coupon-item">
-            <strong> Coupon Name:</strong> {coupon.name}<br />
-            <strong>Description:</strong> {coupon.description}<br />
-            <strong>Expiry Date:</strong> {coupon.expirationDate}<br />
-            <strong>Category:</strong> {coupon.category}<br />
-            {coupon.image && <img src={coupon.image} alt={coupon.name} style={{ maxWidth: '100px', maxHeight: '100px' }} />} 
+            <strong> Coupon Name:</strong> {coupon.name}
             <br />
-            <button onClick={() => deleteCoupon(coupon.id)}>Delete</button>
+            <strong>Description:</strong> {coupon.description}
+            <br />
+            <strong>Expiry Date:</strong> {coupon.expired}
+            <br />
+            <strong>Category:</strong> {coupon.category}
+            <br />
+            {coupon.imageSrc && (
+              <img
+                src={coupon.imageSrc}
+                alt={coupon.nameSrc}
+                style={{ maxWidth: "100px", maxHeight: "100px" }}
+              />
+            )}
+            <br />
+            <button onClick={() => deleteCoupon(coupon.name)}>Delete</button>
             <button onClick={() => openEditPopup(coupon)}>Edit</button>
           </li>
         ))}
       </ul>
-     
+
       {showAddPopup && (
         <CouponFormPopup
-          initialValues={{ name: '', description: '', expirationDate: '', category: 'fashion', image: null }}
+          initialValues={{
+            name: "",
+            description: "",
+            expired: "",
+            category: "fashion",
+            image: null,
+          }}
           onSubmit={onSubmit}
           onCancel={() => setShowAddPopup(false)}
         />
       )}
-     
+
       {showEditPopup && selectedCoupon && (
-        <CouponFormPopup
+        <CouponEdit
           initialValues={selectedCoupon}
           onSubmit={onSubmit}
           onCancel={() => setShowEditPopup(false)}

@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 const Coupon = new mongoose.Schema({
-    id:{
-        type:String,
-        require:true,
-    },
-    name: {
+  id: {
+    type: String,
+    require: true,
+  },
+  name: {
     type: String,
     required: true,
   },
@@ -16,17 +16,21 @@ const Coupon = new mongoose.Schema({
     type: Number,
     required: true,
   },
- 
+
   category: {
     type: String,
-    enum: ["Fashion", "Beauty", "Home", "Food"],
+    enum: ["fashion", "beauty", "home", "food"],
     required: true,
   },
   code: {
-    type: String
+    type: String,
   },
   expired: {
-    type: String
+    type: String,
+  },
+  imageSrc: {
+    type: String,
+    required: true,
   },
 });
 export const couponModel = mongoose.model("coupons", Coupon);

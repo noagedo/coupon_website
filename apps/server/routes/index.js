@@ -6,7 +6,10 @@ import beauty from "./beauty.js";
 import { couponRouter } from "./fashion.js";
 import { userRouter } from "./login.js";
 import { createRouter } from "./createUser.js";
-import {searchRouter} from "./search.js"
+import { searchRouter } from "./search.js";
+import { createCouponRouter } from "./createCoupon.js";
+import { deleteRouter } from "./delete.js";
+import {updateRouter} from "./update.js";
 
 export default function routes(app) {
   app.use("/auth", auth);
@@ -18,8 +21,7 @@ export default function routes(app) {
   app.use(userRouter);
   app.use(createRouter);
   app.use(searchRouter);
-
-  app.get("/wishList", (req, res) => {
-    res.send("./componenents/wishList.jsx");
-  });
+  app.use(createCouponRouter);
+  app.use(deleteRouter);
+  app.use(updateRouter);
 }

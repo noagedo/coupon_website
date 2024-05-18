@@ -6,10 +6,13 @@ import myphoto from "../assets/its time for.png";
 import { Search } from "./Search";
 
 export const HomePage = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+
   return (
     <div>
-      <Search />
-
+      <br />
+      {user && <Search />}
+<br />
       <video
         autoPlay
         loop

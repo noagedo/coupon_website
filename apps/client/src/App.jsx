@@ -14,6 +14,7 @@ import AdminCouponList from "./components/AdminCouponList";
 
 import { Beauty } from "./components/Beauty";
 
+import ChatBot from "./components/ChatBot";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/beauty" element={<Beauty />} />
       </Routes>
       <Footer />
+      <ChatBot  />
     </Router>
   );
 }

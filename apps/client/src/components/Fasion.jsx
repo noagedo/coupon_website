@@ -10,7 +10,6 @@ export const Fashion = () => {
       const { data } = await axios.get(
         "http://localhost:5000/coupon/getCoupon"
       );
-      // Filter coupons based on category
       const fashionCoupons = data.filter(
         (coupon) => coupon.category === "fashion"
       );
