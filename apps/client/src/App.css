@@ -66,7 +66,7 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, .dropdown:hover .dropbtn, .chatBot {
   background-color: #EFA593;
 }
 
@@ -124,7 +124,9 @@ body {
 
 .form-container form input[type="text"],
 .form-container form input[type="password"],
-.form-container form input[type="tel"]{
+.form-container form input[type="tel"],
+.form-container form input[type="email"]
+{
   width: calc(100% - 24px); /* להקטין את רוחב ה-inputs על מנת שיתאימו ל-padding */
   padding: 12px;
   margin-bottom: 20px;
@@ -186,6 +188,7 @@ body {
   width: 200px;
   height: 30px;
   border-radius: 8px; 
+  margin-left: 20px;
 }
 
 .serchBotton{
@@ -322,3 +325,40 @@ footer
 .admin-coupon-list button + button {
   margin-left: 10px;
 }
+
+
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  margin-right: 10px;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0d0d0d;
+  font-size: 16px;
+}
+
+.logout-button i {
+  margin-left: 5px;
+}
+
+.loginBtn,
+ .signupBtn{
+
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  background-color: #8cb964;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+

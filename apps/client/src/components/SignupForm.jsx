@@ -31,6 +31,7 @@ const SignupForm = () => {
       const data = await response.json();
       console.log("User created:", data);
       alert("New user created successfully!");
+      window.location.href = '/login';
     } catch (error) {
       console.log("Error");
       alert("Error creating user. Please try again.");
@@ -38,6 +39,7 @@ const SignupForm = () => {
   };
 
   return (
+    <div><br /><br />
     <div className="form-container">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
@@ -80,8 +82,9 @@ const SignupForm = () => {
           value={formData.phonenumber}
           onChange={handleChange}
         />
-        <button type="submit">Register</button>
+        <button className="signupBtn" type="submit">Register</button>
       </form>
+    </div>
     </div>
   );
 };
