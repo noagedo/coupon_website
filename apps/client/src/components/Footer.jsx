@@ -1,25 +1,44 @@
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
- const Footer = () => {
+import { FaSquareInstagram, FaWhatsapp, FaEnvelope, FaFacebookF } from "react-icons/fa6";
+
+
+const Footer = () => {
   return (
     <>
-    <br /><br />
-      <footer className="footer"> {/* Assigning the class "footer" to utilize the styles from the CSS file */}
-      
-        <div className="footer-socials"> 
-
-          {/* Social media links */}
-          <a href="https://www.instagram.com/"><FaSquareInstagram size={40} color="#E1306C" /></a>
-          <a href="https://www.facebook.com/"><FaFacebookSquare size={40} color="blue"/></a>
+      <br /><br />
+      <footer className="footer">
+        <div className="footer-contact">
+          <h4>Contact us</h4>
+          <p><strong>Phone:</strong> 03-963-4000</p>
         </div>
-        <p>contact us</p> {/* Adding a copyright notice */}
-        <p>about {/* Adding a note about the development tools used */}</p>
-        <p>privacy policy</p> {/* Adding a copyright notice */}
-        <p>terms of use {/* Adding a note about the development tools used */}</p>
-        
+        <div className="footer-socials">
+         
+          <div className="icons">
+            <a href="https://wa.me/039628930" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp style={{ fontSize: '25px' }} />
+            </a>
+            <a href="mailto:Maitala@college.org.il" target="_blank" rel="noopener noreferrer">
+              <FaEnvelope style={{ fontSize: '25px' }} />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF style={{ fontSize: '25px' }} />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              <FaSquareInstagram style={{ fontSize: '25px' }} />
+            </a>
+          </div>
+        </div>
+        <div >
+          <p><a href="/privacy-policy">Privacy Policy</a></p>
+          <p><a href="/terms-of-use">Terms of Use</a></p>
+
+
+        </div>
       </footer>
+      <div className="copyright">
+        <p>&copy; 2024, Coupony</p>
+      </div>
     </>
   );
-
 };
+
 export default Footer;
